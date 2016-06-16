@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/guillaumewuip/hubot-wit-helper/issues"
   },
-  "homepage": "https://github.com/guillaumewuip/hubot-wit-helper#readme"
+  "homepage": "https://github.com/guillaumewuip/hubot-wit-helper#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.1",
+    "jshint-stylish": "^2.2.0"
+  }
 }
