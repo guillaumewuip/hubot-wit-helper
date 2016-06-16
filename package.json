@@ -1,0 +1,24 @@
+{
+  "name": "hubot-wit-helper",
+  "version": "0.1.0",
+  "description": "An helper to use Wit.ai with your Hubot bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guillaumewuip/hubot-wit-helper.git"
+  },
+  "keywords": [
+    "hubot",
+    "wit.ai",
+    "bot"
+  ],
+  "author": "Guillaume Wuip <guillaume@wuips.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guillaumewuip/hubot-wit-helper/issues"
+  },
+  "homepage": "https://github.com/guillaumewuip/hubot-wit-helper#readme"
+}
