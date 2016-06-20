@@ -1,7 +1,7 @@
 hubot-wit-helper [![Build Status](https://travis-ci.org/guillaumewuip/hubot-wit-helper.svg?branch=master)](https://travis-ci.org/guillaumewuip/hubot-wit-helper)
 ================
 
-An helper to use Wit.ai with your Hubot bot
+An helper to use Wit.ai with your [Hubot bot](http://hubot.github.com)
 
 # Install [![npm version](https://badge.fury.io/js/hubot-wit-helper.svg)](https://badge.fury.io/js/hubot-wit-helper)
 
@@ -11,7 +11,7 @@ npm install hubot-wit-helper
 
 # Use
 
-Here's a basic [hubot](hubot.github.com) script :
+Here's a basic [hubot](http://hubot.github.com) script :
 
 ```js
 'use strict';
