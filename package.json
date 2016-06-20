@@ -4,7 +4,7 @@
   "description": "An helper to use Wit.ai with your Hubot bot",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "gulp js:lint && mocha"
   },
   "repository": {
     "type": "git",

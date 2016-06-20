@@ -8,7 +8,12 @@
 
     let paths = {
         js: {
-            src : ['index.js', 'lib/**/*.js', 'test/**/*.js'],
+            src : [
+                'index.js',
+                'lib/**/*.js',
+                'test/**/*.js',
+                'examples/**/*.js'
+            ],
         },
     };
 
