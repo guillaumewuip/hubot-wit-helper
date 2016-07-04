@@ -29,27 +29,17 @@
     })();
 
     const actions = {
-        say(session, context, message, cb) {
+        send(request, response) {
 
-            //res object is attached to the session
-            session.res.reply(message);
+            const { sessionId, context, entities } = request;
+            const { text, quickreplies } = response;
 
-            cb();
+            return new Promise(function(resolve, reject) {
+                //res object is attached to the sessionId
+                sessionId.res.reply(text);
+                return resolve();
+            });
         },
-        merge(session, context, entities, message, cb) {
-
-            const loc = witHelper.firstEntityValue(entities, 'location');
-
-            if (loc) {
-                context.loc = loc;
-            }
-
-            cb(context);
-        },
-        error(session, context, error) {
-            console.error(error.message);
-            session.res.send('Something went wrong with Wit.ai :scream:');
-        }
     };
 
     const bot = robot => {
