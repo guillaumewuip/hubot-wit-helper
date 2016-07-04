@@ -31,10 +31,10 @@
     const actions = {
         send(request, response) {
 
-            const { sessionId, context, entities } = request;
-            const { text, quickreplies } = response;
+            const { sessionId } = request;
+            const { text } = response;
 
-            return new Promise(function(resolve, reject) {
+            return new Promise(function(resolve) {
                 //res object is attached to the sessionId
                 sessionId.res.reply(text);
                 return resolve();
