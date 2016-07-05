@@ -1,75 +1,70 @@
+export interface Session {
+    res: any;
+}
 
-declare module 'hubot-wit-helper' {
+export interface Context {
+    [prop: string]: any;
+}
 
-    export interface Session {
-        res: any;
-    }
+export interface Entities {
+    [prop: string]: any;
+}
 
-    export interface Context {
-        [prop: string]: any;
-    }
+export interface Request {
+    sessionId: Session;
+    context: Context;
+    text: string;
+    entities: Entities;
+}
 
-    export interface Entities {
-        [prop: string]: any;
-    }
+export interface Response {
+    text: string;
+    quickreplies: string[];
+}
 
-    export interface Request {
-        sessionId: Session;
-        context: Context;
-        text: string;
-        entities: Entities;
-    }
+export type SendAction = (request: Request, response: Response)
+                            => Promise<any>;
 
-    export interface Response {
-        text: string;
-        quickreplies: string[];
-    }
+//quick hack here for Typescript to not complain about SendAction / Action
+//incompatibility
+export type Action = (request: Request, ...params: any[])
+                            => Promise<Context>;
 
-    export type SendAction = (request: Request, response: Response)
-                                => Promise<any>;
+export interface Actions {
+    send: SendAction;
+    [prop: string]: Action;
+}
 
-    //quick hack here for Typescript to not complain about SendAction / Action
-    //incompatibility
-    export type Action = (request: Request, ...params: any[])
-                                => Promise<Context>;
+export interface HubotResponse {
+    send: (msg: string) => void;
+    reply: (msg: string) => void;
+    emote: (msg: string) => void;
+    match: string[];
+}
 
-    export interface Actions {
-        send: SendAction;
-        [prop: string]: Action;
-    }
+type Callback = (err: any, context: any, res: any) => void;
+type HubotCallback = (res: HubotResponse) => void;
 
-    export interface HubotResponse {
-        send: (msg: string) => void;
-        reply: (msg: string) => void;
-        emote: (msg: string) => void;
-        match: string[];
-    }
+interface Bot {
+    listen: (reg: RegExp, cb: HubotCallback) => void;
+    hear: (reg: RegExp, cb: HubotCallback) => void;
+    respond: (reg: RegExp, cb: HubotCallback) => void;
+}
 
-    type Callback = (err: any, context: any, res: any) => void;
-    type HubotCallback = (res: HubotResponse) => void;
+export class Robot {
 
-    interface Bot {
-        listen: (reg: RegExp, cb: HubotCallback) => void;
-        hear: (reg: RegExp, cb: HubotCallback) => void;
-        respond: (reg: RegExp, cb: HubotCallback) => void;
-    }
+    public getMsg: {
+        (msg: string): string;
+    };
 
-    export class Robot {
+    public respond: {
+        (reg: RegExp, call: Callback): void;
+    };
 
-        public getMsg: {
-            (msg: string): string;
-        };
-
-        public respond: {
-            (reg: RegExp, call: Callback): void;
-        };
-
-        constructor(
-            WIT_TOKEN: string,
-            actions: Actions,
-            robot: Bot,
-            logger?: any
-        )
-    }
-
+    constructor(
+        WIT_TOKEN: string,
+        actions: Actions,
+        robot: Bot,
+        logger?: any
+    )
 }
