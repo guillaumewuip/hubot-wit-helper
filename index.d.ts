@@ -64,3 +64,6 @@ export class Robot {
         logger?: any
     )
 }
+
+export function firstEntityValue(e: Entities, s: string) => string;
+
