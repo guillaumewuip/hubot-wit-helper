@@ -1,10 +1,6 @@
-export interface Session {
-    res: any;
-}
+export type Session = any;
 
-export interface Context {
-    [prop: string]: any;
-}
+export type Context = any;
 
 export interface Entities {
     [prop: string]: any;
