@@ -65,5 +65,5 @@ export class Robot {
     )
 }
 
-export function firstEntityValue(e: Entities, s: string) => string;
+export function firstEntityValue(e: Entities, s: string): string;
 
