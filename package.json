@@ -1,6 +1,6 @@
 {
   "name": "hubot-wit-helper",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "An helper to use Wit.ai with your Hubot bot",
   "main": "index.js",
   "scripts": {
