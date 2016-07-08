@@ -73,7 +73,7 @@ export class Robot {
     )
 }
 
-export const log Log;
+export const log: Log;
 
 export function firstEntityValue(e: Entities, s: string): string
 
