@@ -47,6 +47,14 @@ interface Bot {
     respond: (reg: RegExp, cb: HubotCallback) => void;
 }
 
+interface Log {
+    DEBUG: string;
+    INFO: string;
+    WARN: string;
+    ERROR: string;
+    Logger: any;
+};
+
 export class Robot {
 
     public getMsg: {
@@ -64,6 +72,8 @@ export class Robot {
         logger?: any
     )
 }
+
+export log Log;
 
 export function firstEntityValue(e: Entities, s: string): string;
 

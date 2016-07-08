@@ -44,7 +44,12 @@
 
     const bot = robot => {
 
-        const witRobot = new witHelper.Robot(TOKEN, actions, robot);
+        const witRobot = new witHelper.Robot(
+            TOKEN,
+            actions,
+            robot,
+            new witHelper.log.Logger(witHelper.log.DEBUG)
+        );
 
         //will listen for "@testbot: hey you"
         const reg = /(\ *@(.*):\ +(hey)(.*))/i;
