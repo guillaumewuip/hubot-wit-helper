@@ -53,7 +53,7 @@ interface Log {
     WARN: string;
     ERROR: string;
     Logger: any;
-};
+}
 
 export class Robot {
 
@@ -73,7 +73,7 @@ export class Robot {
     )
 }
 
-export log Log;
+export const log Log;
 
-export function firstEntityValue(e: Entities, s: string): string;
+export function firstEntityValue(e: Entities, s: string): string
 
